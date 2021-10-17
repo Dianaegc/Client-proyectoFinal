@@ -44,13 +44,26 @@ console.log(error)
 
 
 
-const addProduct = ()=>{
+const addProduct = async (dataForm)=>{
+    console.log(dataForm)
 
-    console.log("Di click")
-    dispatch({
-        type:"AGREGAR_PRODUCTO",
-        payload: newProduct
-    })
+
+    try{
+        await axiosClient.post("/api/products/create",dataForm)
+        getAllProducts()
+    }catch(error){
+        console.log(error)
+    }
+  
+
+
+
+   
+
+   // dispatch({
+     //   type:"AGREGAR_PRODUCTO",
+     //   payload: newProduct
+  //  })
 
 }
 

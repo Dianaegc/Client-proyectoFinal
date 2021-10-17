@@ -5,6 +5,7 @@ import Home from './components/Products/Home'
 import Login from './components/Signup-Login/Login'
 import Signup from './components/Signup-Login/Signup'
 import Header from './components/Layout/Header'
+import Header2 from './components/Layout/Header2'
 import Main from './components/Layout/Main'
 import Footer from './components/Layout/Footer'
 import ProductsState from './context/Products/ProductsState';
@@ -26,6 +27,7 @@ function App() {
     <ProductsState>
     <Router>
     <Header/>
+    <Header2/>
     <Switch>
 
  {/*Rutas privadas */}

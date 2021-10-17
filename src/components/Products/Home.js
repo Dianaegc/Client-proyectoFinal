@@ -3,6 +3,7 @@ import ProductsContext from "./../../context/Products/ProductsContext";
 import Img1 from "./../../assets/cocer.jpg";
 import Img2 from "./../../assets/Maquina.jpeg"
 import Img3 from "./../../assets/Tela.jpeg"
+import Frase from "./../../assets/frase.png"
 
 
 export default function Home() {
@@ -12,15 +13,21 @@ export default function Home() {
 
   return (
     <>
+
       <div class="bg-white">
-        <div class="max-w-2xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div class="max-w-2xl mx-auto py-24 px-4 sm:py-10 sm:px-2 lg:max-w-4xl lg:px-8">
+        
           <div class="grid items-center grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-2">
+          
             <div>
-              <div class="border-b border-gray-200 pb-10">
-                <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            
+          
+             
+              <br/>
+                <p class="mt-2 text-2xl font-extrabold tracking-tight text-yellow-600 sm:text-2xl">
                   ¿Quienes somos?
                 </p>
-                <dd class="mt-3 text-sm text-gray-500">
+                <dd class="mt-10 text-sm text-gray-500">
                   Institución que ha brindado terapia
                   ocupacional remunerada a adultos de 60 años o más; dicha
                   terapia está enfocada a empoderarlos logrando que se sientan
@@ -28,12 +35,12 @@ export default function Home() {
                   mejorando con esto su estado anímico y por consecuencia su
                   estado de salud.
                 </dd>
-              </div>
+            
 
               <dl class="mt-10 space-y-10">
                 <div>
-                  <dt class="text-sm font-medium text-gray-900">
-                    Terapia
+                  <dt class="text-sm font-medium text-yellow-600">
+                   
                   </dt>
                   <dd class="mt-3 text-sm text-gray-500">
                     Dicha terapia es a través de un taller de costura, misma que
@@ -46,7 +53,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <dt class="text-sm font-medium text-gray-900">
+                  <dt class="text-m font-bold text-yellow-600">
                     Objetivo
                   </dt>
                   <dd class="mt-3 text-sm text-gray-500">
@@ -59,23 +66,9 @@ export default function Home() {
                   </dd>
                 </div>
 
-                <div>
-                  <dt class="text-sm font-medium text-gray-900">
-                    One-button control
-                  </dt>
-                  <dd class="mt-3 text-sm text-gray-500">
-                    The one button control has a digital readout for setting
-                    temperature and turning the kettle on and off.
-                  </dd>
-                </div>
+                
 
-                <div>
-                  <dt class="text-sm font-medium text-gray-900">Long spout</dt>
-                  <dd class="mt-3 text-sm text-gray-500">
-                    Designed specifically for controlled pour-overs that
-                    don&#039;t slash or sputter.
-                  </dd>
-                </div>
+                
               </dl>
             </div>
 
@@ -107,6 +100,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+ 
+
+
+
+
+
+
+  
     </>
   );
 }
