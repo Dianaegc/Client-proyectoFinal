@@ -45,11 +45,11 @@ export default function Header2() {
                       Contacto
                     </Link>
                     <Link
-                      to="/productos/crear"
+                      to="/admin"
                       class="text-base py-4 px-8 font-medium text-white hover:text-yellow-600"
                       key="Company"
                     >
-                      Crear Producto
+                   Admin
                     </Link>
 
 

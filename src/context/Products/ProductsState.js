@@ -42,6 +42,9 @@ console.log(error)
 }
 }
 
+// funcion singleProduct
+
+
 
 
 const addProduct = async (dataForm)=>{

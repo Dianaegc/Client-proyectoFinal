@@ -1,6 +1,4 @@
 import './App.css';
-import CreateProduct from './components/Products/CreateProduct'
-import Products from './components/Products/Products'
 import Home from './components/Products/Home'
 import Login from './components/Signup-Login/Login'
 import Signup from './components/Signup-Login/Signup'
@@ -8,10 +6,22 @@ import Header from './components/Layout/Header'
 import Header2 from './components/Layout/Header2'
 import Main from './components/Layout/Main'
 import Footer from './components/Layout/Footer'
+//products
 import ProductsState from './context/Products/ProductsState';
+import CreateProduct from './components/Admin/CreateProduct'
+import Products from './components/Products/Products'
+import SingleProduct from './components/Products/SingleProduct'
+
+
 import UsersState from './context/Users/UsersState'
 import Contact from './components/Products/Contacto'
 import Foundation from './components/Products/Fundacion'
+import Admin from './components/Admin/Admin'
+
+
+import AuthRoute from './components/Routes/AuthRoute'
+import PublicRoute from './components/Routes/PublicRoute'
+import PrivateRoute from './components/Routes/PrivateRoute'
 
 import { 
   Switch,
@@ -31,18 +41,20 @@ function App() {
     <Switch>
 
  {/*Rutas privadas */}
-
+ <PrivateRoute exact path="/admin" component={Admin}/>
+      <PrivateRoute exact path="/productos/crear" component={CreateProduct} />
+   
 
 
     {/*Rutas de autenticacion  */}
-    <Route exact path="/iniciar-sesion" component ={Login}/>
-    <Route exact path="/crear-sesion" component ={Signup}/>
+    <AuthRoute exact path="/iniciar-sesion" component ={Login}/>
+    <AuthRoute exact path="/crear-sesion" component ={Signup}/>
      {/*Rutas publicas */}
-      <Route exact path="/productos/crear" component={CreateProduct} />
-      <Route  exact path="/productos" component={Products} />
-      <Route  exact path="/contacto" component={Contact} />
-      <Route  exact path="/fundacion" component={Foundation} />
-      <Route  exact path="/" component={Home} />
+      <PublicRoute exact path="/productos/:id" component ={SingleProduct} />
+      <PublicRoute  exact path="/productos" component={Products} />
+      <PublicRoute  exact path="/contacto" component={Contact} />
+      <PublicRoute  exact path="/fundacion" component={Foundation} />
+      <PublicRoute  exact path="/" component={Home} />
     </Switch>
     <Footer/>
     </Router>

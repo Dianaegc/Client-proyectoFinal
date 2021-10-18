@@ -1,7 +1,9 @@
-import Product1 from "./../../assets/BolsasSuper.jpeg";
+import Product1 from "./../../assets/mochila.jpeg";
 import React,{useContext,useEffect}from 'react'
 import ProductsContext from './../../context/Products/ProductsContext'
 import ClipLoader from "react-spinners/ClipLoader";
+import { Link } from "react-router-dom";
+
 
 export default function Products() {
 
@@ -40,10 +42,10 @@ export default function Products() {
               </div>
               <div class="pt-10 pb-4 text-center">
                 <h3 class="text-sm font-medium text-gray-900">
-                  <a href="#">
+                  <Link to={`/productos/${e._id}`}>
                     <span aria-hidden="true" class="absolute inset-0"></span>
                     {e.name}
-                  </a>
+                  </Link>
                 </h3>
                 <div class="mt-3 flex flex-col items-center">
                   <p class="sr-only">4 out of 5 stars</p>

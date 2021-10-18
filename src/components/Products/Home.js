@@ -3,7 +3,7 @@ import ProductsContext from "./../../context/Products/ProductsContext";
 import Img1 from "./../../assets/cocer.jpg";
 import Img2 from "./../../assets/Maquina.jpeg"
 import Img3 from "./../../assets/Tela.jpeg"
-import Frase from "./../../assets/frase.png"
+
 
 
 export default function Home() {

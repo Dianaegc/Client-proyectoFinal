@@ -25,7 +25,7 @@ export default function Signup() {
   };
   const submitData = (event) => {
     event.preventDefault();
-
+   // console.log(newUser)
     registerUser(newUser);
   };
   return (
