@@ -37,12 +37,14 @@ const ProductsState = (props) => {
   // funcion singleProduct
   const getProduct = async (id) => {
     try {
+      console.log("ANTES DE ENTRAR a id: ",id)
       const res = await axiosClient.get(`/api/products/product/${id}`);
       console.log(res.data.data)
-      const productFormDB = res.data.data;
+      const productFromDB = res.data.data;
+      console.log("ProductFromDB: ",productFromDB)
       dispatch({
         type: "OBTENER_CADAPRODUCTO",
-        payload: productFormDB,
+        payload: productFromDB,
       });
     } catch (error) {
       console.log(error);

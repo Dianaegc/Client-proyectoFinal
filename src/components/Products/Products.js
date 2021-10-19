@@ -7,12 +7,12 @@ import { Image } from "cloudinary-react";
 
 export default function Products() {
   const ctx = useContext(ProductsContext);
-  const { products, getAllProducts } = ctx;
+  const { products, getAllProducts, getProduct } = ctx;
 
   useEffect(() => {
     getAllProducts();
   },[]);
-  return (
+  return(
     <>
       <div class="bg-white">
         <div class="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8">
@@ -35,7 +35,9 @@ export default function Products() {
                     </div>
                     <div class="pt-10 pb-4 text-center">
                       <h3 class="text-sm font-medium text-gray-900">
-                        <Link to={`/productos/${e._id}`}>
+                        <Link to={`/productos/${e._id}`} onClick={ () => {
+                          console.log("En link: ",e._id)
+                           getProduct(e._id) } }>
                           <span
                             aria-hidden="true"
                             class="absolute inset-0"
