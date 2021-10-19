@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import UsersContext from "./../../context/Users/UsersContext";
-import Logo from "./../../assets/losSesenta.png";
+
 
 export default function Signup() {
   const ctxUser = useContext(UsersContext);
@@ -34,7 +34,7 @@ export default function Signup() {
       <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
           <div>
-            <img class="mx-auto h-20 w-auto" src={Logo} alt="LogoSesenta" />
+            <img class="mx-auto h-20 w-auto" src="https://res.cloudinary.com/dd329k01w/image/upload/v1634682273/products/losSesenta_hvvgon.png" alt="LogoSesenta" />
             <h2 class="mt-6 text-center text-3xl font-bold text-gray-900">
               Registro
             </h2>

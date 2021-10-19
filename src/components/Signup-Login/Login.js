@@ -1,5 +1,5 @@
 import React,{useState,useContext} from "react";
-import Logo from "./../../assets/losSesenta.png";
+
 import UsersContext from "./../../context/Users/UsersContext"
 
 export default function Login() {
@@ -41,7 +41,7 @@ export default function Login() {
    
       <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-          <img class="mx-auto h-20 w-auto" src={Logo} alt="Workflow" />
+          <img class="mx-auto h-20 w-auto" src="https://res.cloudinary.com/dd329k01w/image/upload/v1634682273/products/losSesenta_hvvgon.png" alt="logo" />
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Iniciar Sesión
           </h2>
