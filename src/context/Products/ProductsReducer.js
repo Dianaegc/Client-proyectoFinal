@@ -9,8 +9,12 @@ switch(action.type){
                 products:action.payload
             }
 
-
-
+        case "OBTENER_CADAPRODUCTO":  //
+            return{
+                ...globalState,
+                product:action.payload
+            }
+//
 
         case "AGREGAR_PRODUCTO":
 
@@ -22,6 +26,8 @@ switch(action.type){
                     action.payload
                 ]
             }
+
+             
 
     default:
         return globalState

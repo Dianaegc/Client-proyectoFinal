@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import LogoN from "./../../assets/LosSesenta.png";
+import LogoN from "./../../assets/losSesenta.png";
 import { Link } from "react-router-dom";
 import UsersContext from "./../../context/Users/UsersContext";
 
@@ -29,7 +29,7 @@ export default function Header() {
             {authStatus ? (
               <div class="ml-10 space-x-4">
                 <Link
-                  to="/perfil"
+                  to="/mi-perfil"
                   class="  inline-block bg-white py-2 px-4 border border-transparent rounded-full text-base font-medium text-yellow-600 hover:bg-gray-100"
                 >
                   Mi perfil

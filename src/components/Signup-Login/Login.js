@@ -1,5 +1,5 @@
 import React,{useState,useContext} from "react";
-import Logo from "./../../assets/LosSesenta.png";
+import Logo from "./../../assets/losSesenta.png";
 import UsersContext from "./../../context/Users/UsersContext"
 
 export default function Login() {

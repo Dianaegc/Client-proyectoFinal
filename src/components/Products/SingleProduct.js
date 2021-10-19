@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import ProductsContext from "./../../context/Products/ProductsContext";
+import{useParams} from 'react-router-dom'
 
 export default function SingleProduct() {
-
-  //use effect  para mandar llamar getProductById()
-  
+  const ctx = useContext(ProductsContext);
+  const { product, getProduct } = ctx;
+  const {id}= useParams()
+  console.log(id)
+  //
+  useEffect(() => {
+    getProduct(id)
+    console.log(product)
+  },[product]);
   return (
     <>
-      Esta es la seccion del single product
       <div class="bg-white">
         <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <div class="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
@@ -27,7 +34,7 @@ export default function SingleProduct() {
                     <span class="sr-only">Angled view</span>
                     <span class="absolute inset-0 rounded-md overflow-hidden">
                       <img
-                        src="https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg"
+                        src="https://res.cloudinary.com/dd329k01w/image/upload/v1634607075/products/todoscubrebocas_eetbpz.jpg"
                         alt=""
                         class="w-full h-full object-center object-cover"
                       />
@@ -49,7 +56,7 @@ export default function SingleProduct() {
                   tabindex="0"
                 >
                   <img
-                    src="https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg"
+                    src="https://res.cloudinary.com/dd329k01w/image/upload/v1634610825/products/Cubrebocas2_pwmngz.jpg"
                     alt="Angled front view with bag zipped and handles upright."
                     class="w-full h-full object-center object-cover sm:rounded-lg"
                   />
@@ -59,7 +66,7 @@ export default function SingleProduct() {
 
             <div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
               <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">
-                Zip Tote Basket
+               
               </h1>
 
               <div class="mt-3">

@@ -1,98 +1,78 @@
-import React ,{useReducer}from 'react';
-import ProductsContext from './ProductsContext';
-import ProductsReducer from './ProductsReducer'
-import axiosClient from './../../config/axios'
+import React, { useReducer } from "react";
+import ProductsContext from "./ProductsContext";
+import ProductsReducer from "./ProductsReducer";
+import axiosClient from "./../../config/axios";
 
+const ProductsState = (props) => {
+  const initialState = {
+    products: [],
+  };
 
+  //Reducers
 
-const ProductsState=(props)=>{
+  const [globalState, dispatch] = useReducer(ProductsReducer, initialState);
 
-    const initialState={
-        products:[]
+  const newProduct = {
+    name: "Organizador",
+  };
+
+  //3.Funciones -alterar al initial state
+
+  const getAllProducts = async () => {
+    //peticion para obtener todos los productos
+    try {
+      const res = await axiosClient.get("/api/products/get-all");
+
+      const productsFromDB = res.data.data;
+
+      dispatch({
+        type: "OBTENER_PRODUCTO",
+        payload: productsFromDB,
+      });
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-
-//Reducers
-
-const [globalState,dispatch]=useReducer(ProductsReducer,initialState)
-
-
-const newProduct={
-    name:"Organizador"
-}
-
-
-//3.Funciones -alterar al initial state
-
-const getAllProducts=async ()=>{ //peticion para obtener todos los productos
-try{
-const res= await axiosClient.get("/api/products/get-all")
-
-
-const productsFromDB= res.data.data
-
-
-dispatch ({
-    type:"OBTENER_PRODUCTO",
-    payload:productsFromDB
-})
-
-}catch(error){
-console.log(error)
-}
-}
-
-// funcion singleProduct
-
-
-
-
-const addProduct = async (dataForm)=>{
-    console.log(dataForm)
-
-
-    try{
-        await axiosClient.post("/api/products/create",dataForm)
-        getAllProducts()
-    }catch(error){
-        console.log(error)
+  // funcion singleProduct
+  const getProduct = async (id) => {
+    try {
+      const res = await axiosClient.get(`/api/products/product/${id}`);
+      console.log(res.data.data)
+      const productFormDB = res.data.data;
+      dispatch({
+        type: "OBTENER_CADAPRODUCTO",
+        payload: productFormDB,
+      });
+    } catch (error) {
+      console.log(error);
     }
-  
+  };
 
+  const addProduct = async (dataForm) => {
+    console.log(dataForm);
 
+    try {
+      await axiosClient.post("/api/products/create", dataForm);
+      getAllProducts();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-   
-
-   // dispatch({
-     //   type:"AGREGAR_PRODUCTO",
-     //   payload: newProduct
-  //  })
-
-}
-
-
-
-// 4.Retorno
-return(
+  // 4.Retorno
+  return (
     <ProductsContext.Provider // Ya contiene la providuria de todos los componentes , le estoy mandando todo el value a todos mis componentes
-    value={{
+      value={{
         products: globalState.products,
         getAllProducts,
-        addProduct
-       
-    }}
+        getProduct,
+        addProduct,
+      }}
     >
-       { props.children }
-    
+      {props.children}
     </ProductsContext.Provider>
-    
-    
-    
-    )
+  );
+};
 
-}
-
-
-
-
-export default ProductsState
+export default ProductsState;

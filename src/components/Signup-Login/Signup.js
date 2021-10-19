@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import UsersContext from "./../../context/Users/UsersContext";
-import Logo from "./../../assets/LosSesenta.png";
+import Logo from "./../../assets/losSesenta.png";
 
 export default function Signup() {
   const ctxUser = useContext(UsersContext);

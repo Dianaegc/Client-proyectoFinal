@@ -192,8 +192,7 @@ export default function Contacto() {
 
                 <h3 class="text-lg font-medium text-yellow-600">Mensaje</h3>
                 <p class="mt-6 text-base text-indigo-50 max-w-3xl">
-                  Dejanos un mensaje en caso de que tengas alguna duda o quieras
-                  que nos comuniquemos contigo.Nos comunicaremos a la brevedad.{" "}
+                  Déjanos un mensaje,tus datos y nos comunicaremos contigo para brindarte más información.
                 </p>
               </div>
 
