@@ -47,11 +47,11 @@ export default function Admin() {
           <nav class="space-y-1">
             <a
               href="#"
-              class="bg-gray-50 text-indigo-700 hover:text-indigo-700 hover:bg-white group rounded-md px-3 py-2 flex items-center text-sm font-medium"
+              class="bg-gray-50 text-yellow-7600 hover:text-yellow-600 hover:bg-white group rounded-md px-3 py-2 flex items-center text-sm font-medium"
               aria-current="page"
             >
               <svg
-                class="text-indigo-500 group-hover:text-indigo-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
+                class="text-yellow-600 group-hover:text-yellow-600 flex-shrink-0 -ml-1 mr-3 h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

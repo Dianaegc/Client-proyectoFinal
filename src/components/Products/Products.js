@@ -48,8 +48,8 @@ export default function Products() {
                       <div class="mt-3 flex flex-col items-center">
                         <p class="sr-only">4 out of 5 stars</p>
 
-                        <a href="/productos/:id" class="inline-block bg-white py-2 px-4 border border-transparent rounded-full text-base font-medium text-yellow-600 hover:bg-gray-100">
-                          Descripción
+                        <a href="/productos/:id" class="inline-block bg-white py-2 px-4 border border-transparent rounded-full text-small font-medium text-yellow-600 hover:bg-gray-100">
+                        Ver descripción
                         </a>
                       </div>
                       <p class="mt-4 text-base font-medium text-gray-900">

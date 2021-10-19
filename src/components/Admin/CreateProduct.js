@@ -42,7 +42,7 @@ export default function CreateProduct() {
             <div class="shadow sm:rounded-md sm:overflow-hidden">
               <div class="bg-white py-6 px-4 space-y-6 sm:p-6">
                 <div>
-                  <h3 class="text-lg leading-6 font-medium text-yellow-600">
+                  <h3 class="text-lg leading-7  text-center font-medium text-yellow-600">
                     Creación de Producto
                   </h3>
                 </div>
@@ -62,7 +62,7 @@ export default function CreateProduct() {
                         onChange={(e) => {
                           handleForm(e);
                         }}
-                        class="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
+                        class="focus:ring-blue-900 focus:border-blue-900 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
                       />
                     </div>
                     <label 
@@ -78,7 +78,7 @@ export default function CreateProduct() {
                         onChange={(e) => {
                           handleForm(e);
                         }}
-                        class="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
+                        class="focus:ring-blue-900 focus:border-blue-900 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
                       />
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function CreateProduct() {
                         <div class="flex text-sm text-gray-600">
                           <label
                             for="file-upload"
-                            class="relative cursor-pointer bg-white rounded-md font-medium text-yellow-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                            class="relative cursor-pointer bg-white rounded-md font-medium text-yellow-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
                           >
                             <span>Cargar archivo</span>
                             <input
@@ -147,21 +147,35 @@ export default function CreateProduct() {
                         <p class="text-xs text-gray-500">
                           PNG, JPG, GIF up to 10MB
                         </p>
+                       
                       </div>
+                      
                     </div>
                   </div>
                 </div>
+                
               </div>
-              <div class="px-4 py-3 bg-blue-900 text-right sm:px-6">
-                <button
-                  type="submit"
-                  class="  inline-block bg-white py-2 px-4 border border-transparent rounded-full text-base font-medium text-yellow-600 hover:bg-gray-100"
-                >
-                  Guardar
-                </button>
-              </div>
+              
+            <div>
+            <div class="sm:col-span-2 sm:flex sm:justify-end">
+                    <button
+                      type="submit"
+                      class="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-900 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 sm:w-auto"
+                    >
+                      Enviar
+                    </button>
+                   
+                  </div>
+                  <br/>
+                 
+             </div>
+            </div>
+          
+            <div>
             </div>
           </form>
+         
+         
         </div>     </>
   );
 }
