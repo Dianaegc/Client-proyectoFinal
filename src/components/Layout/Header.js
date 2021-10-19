@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import LogoN from "./../../assets/losSesenta.png";
+
 import { Link } from "react-router-dom";
 import UsersContext from "./../../context/Users/UsersContext";
 
@@ -15,7 +15,7 @@ export default function Header() {
               <Link to="/">
                 <img
                   class="h-20 w-100 "
-                  src={LogoN}
+                  src="https://res.cloudinary.com/dd329k01w/image/upload/v1634682273/products/losSesenta_hvvgon.png"
                   alt="Logo de la fundación "
                 />
               </Link>
