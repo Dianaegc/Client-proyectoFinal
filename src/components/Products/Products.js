@@ -34,10 +34,8 @@ export default function Products() {
                       />
                     </div>
                     <div class="pt-10 pb-4 text-center">
-                      <h3 class="text-sm font-medium text-gray-900">
-                        <Link to={`/productos/${e._id}`} onClick={ () => {
-                          console.log("En link: ",e._id)
-                           getProduct(e._id) } }>
+                      <h3 class=" bg-white text-small font-medium text-yellow-600 ">
+                        <Link to={`/productos/${e._id}`}>
                           <span
                             aria-hidden="true"
                             class="absolute inset-0"
@@ -48,7 +46,7 @@ export default function Products() {
                       <div class="mt-3 flex flex-col items-center">
                         <p class="sr-only">4 out of 5 stars</p>
 
-                        <a href="/productos/:id" class="inline-block bg-white py-2 px-4 border border-transparent rounded-full text-small font-medium text-yellow-600 hover:bg-gray-100">
+                        <a href="/productos/:id" class="text-sm  inline-block border-transparent rounded-full  hover:bg-gray-100 font-small text-gray-900">
                         Ver descripción
                         </a>
                       </div>

@@ -13,7 +13,7 @@ const reducer = (globalState, action) => {
         user: [...globalState.USER, action.payload],
       };
 
-    case "INICIO_SESION_EXITOSO":  //ambas hacen los mismo
+    case "INICIO_SESION_EXITOSO": //ambas hacen los mismo
     case "CREAR_USUARIO_EXITOSAMENTE":
       localStorage.setItem("token", action.payload);
       return {
@@ -21,16 +21,13 @@ const reducer = (globalState, action) => {
         authStatus: true,
       };
 
-       case "CERRAR_SESION":
-         localStorage.removeItem("token")
-         return{
-           ...globalState,
-           user:null,
-           authStatus:null
-         }
-
-
-
+    case "CERRAR_SESION":
+      localStorage.removeItem("token");
+      return {
+        ...globalState,
+        user: null,
+        authStatus: null,
+      };
 
     default:
       return globalState;

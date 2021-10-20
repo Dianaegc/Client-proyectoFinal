@@ -40,7 +40,7 @@ const UsersState = (props) => {
   const loginUser = async (dataForm) => {
     try {
       const res = await axiosClient.post("/api/auth/login", dataForm);
-      console.log("estes es el res ", res);
+     
       const token = res.data.data.token;
 
       dispatch({
@@ -48,7 +48,8 @@ const UsersState = (props) => {
         payload: token,
       });
     } catch (error) {
-      console.log(error);
+      console.log("Error al inicio de sesion: ",error);
+      return 'error'
     }
   };
 

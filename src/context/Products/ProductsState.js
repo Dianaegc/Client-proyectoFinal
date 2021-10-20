@@ -26,7 +26,7 @@ const ProductsState = (props) => {
       const productsFromDB = res.data.data;
 
       dispatch({
-        type: "OBTENER_PRODUCTO",
+        type: "OBTENER_PRODUCTOS",
         payload: productsFromDB,
       });
     } catch (error) {

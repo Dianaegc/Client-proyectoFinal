@@ -1,47 +1,50 @@
-import React,{useState,useContext} from "react";
+import React, { useState, useContext } from "react";
 
-import UsersContext from "./../../context/Users/UsersContext"
+import UsersContext from "./../../context/Users/UsersContext";
 
 export default function Login() {
-   // GLOBAL
-   const ctxUser = useContext(UsersContext)
+  // GLOBAL
+  const ctxUser = useContext(UsersContext);
 
-   const { loginUser } = ctxUser
+  const { loginUser } = ctxUser;
 
-   // LOCAL
+  // LOCAL
 
-   const [ userData, setUserData ] = useState({
-       email: "",
-       password: ""
-   })
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
 
-   // FUNCIONES EN LOCAL
-   const handleChange = (event) => {
+  const [login,setLogin] = useState();
 
-       setUserData({
-           ...userData,
-           [event.target.name]: event.target.value
-       })
+  // FUNCIONES EN LOCAL
+  const handleChange = (event) => {
+    setUserData({
+      ...userData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-   }
+  const submitData =async (event) => {
+    event.preventDefault();
 
-   const submitData = (event) => {
+    console.log(userData);
 
-       event.preventDefault()
-
-       console.log(userData)
-       
-       loginUser(userData)
-
-   }
-
+    const login=await loginUser(userData)
+    if(login==='error'){
+      alert("Usuario o contraseña inválidos")
+    }
+  };
 
   return (
     <>
-   
       <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-          <img class="mx-auto h-20 w-auto" src="https://res.cloudinary.com/dd329k01w/image/upload/v1634682273/products/losSesenta_hvvgon.png" alt="logo" />
+          <img
+            class="mx-auto h-20 w-auto"
+            src="https://res.cloudinary.com/dd329k01w/image/upload/v1634682273/products/losSesenta_hvvgon.png"
+            alt="logo"
+          />
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Iniciar Sesión
           </h2>
@@ -49,7 +52,14 @@ export default function Login() {
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form class="space-y-6" onSubmit={(e) => { submitData(e) }}>
+            <form
+              class="space-y-6"
+              onSubmit={(e) => {
+                submitData(e);
+
+              }}
+            >
+      
               <div>
                 <label
                   for="email"
@@ -61,10 +71,11 @@ export default function Login() {
                   <input
                     name="email"
                     type="email"
-              
                     required
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    onChange={(e) => {handleChange(e)}}
+                    onChange={(e) => {
+                      handleChange(e);
+                    }}
                   />
                 </div>
               </div>
@@ -78,13 +89,13 @@ export default function Login() {
                 </label>
                 <div class="mt-1">
                   <input
-                   
                     name="password"
                     type="password"
-              
                     required
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    onChange={(e) => {handleChange(e)}}
+                    onChange={(e) => {
+                      handleChange(e);
+                    }}
                   />
                 </div>
               </div>
@@ -104,3 +115,4 @@ export default function Login() {
     </>
   );
 }
+
