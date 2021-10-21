@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import ProductsContext from "./../../context/Products/ProductsContext";
-import axiosClient from "./../../config/axios";
+import axios from 'axios'
+
 
 export default function CreateProduct() {
   const ctx = useContext(ProductsContext);
@@ -35,18 +36,18 @@ export default function CreateProduct() {
     setNewProduct(prevState=>({...prevState,[event.target.name]: event.target.value}))
   }
 
-  const handleUploadPhoto = async ({ target: { files } }) => {
+  const handleUploadPhoto = async (event) => {
+    console.log(event.target.files)
     
-    const cloudinaryAPI = 'https://api.cloudinary.com/v1_1/dd329k01w/image/upload'
+    const cloudinaryAPI = 'https://api.cloudinary.com/v1_1/samanthacmic/image/upload'
 
     const data = new FormData()
-    data.append('file', files[0])
-    data.append('upload_preset', 'ml_default')
-    const {
-      data: { secure_url }
-    } = await axiosClient.post(cloudinaryAPI, data)
-     console.log(secure_url)
-    setNewProduct(prevState => ({ ...prevState, pictureUrl: secure_url }))
+    data.append('upload_preset', 'Clase-Brillo-CR')
+    data.append('file', event.target.files[0])
+    
+    const result = await axios.post(cloudinaryAPI, data)
+     console.log(result.data.secure_url)
+  setNewProduct(prevState => ({ ...prevState, pictureUrl:result.data.secure_url }))
   }
 
   return (
@@ -130,10 +131,11 @@ export default function CreateProduct() {
                       Imagen del producto
                     </label>
                     <input
-                      value={newProduct.pictureUrl}
-                      name="pictureUrl" // me deja escribir
+                     // value={newProduct.pictureUrl}
+                      type="file"
+                      name="pictureUrl" 
                       onChange={(e) => {
-                        handleForm(e);
+                        handleUploadPhoto (e);
                       }}
                     />
                     <div class="mt-1 border-2 border-gray-300 border-dashed rounded-md px-6 pt-5 pb-6 flex justify-center">
