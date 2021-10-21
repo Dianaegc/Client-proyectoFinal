@@ -1,4 +1,4 @@
-import Product1 from "./../../assets/mochila.jpeg";
+
 import React, { useContext, useEffect } from "react";
 import ProductsContext from "./../../context/Products/ProductsContext";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -30,7 +30,7 @@ export default function Products() {
                       <div></div>
                       <img
                         src={product.pictureUrl}
-                        alt="TODO"
+                        alt="picture of the product"
                         class="w-full h-full object-center object-cover"
                       />
                     </div>

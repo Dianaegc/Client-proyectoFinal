@@ -31,18 +31,22 @@ export default function CreateProduct() {
     addProduct(newProduct);
   };
 
+  const handleChange = (event) => {
+    setNewProduct(prevState=>({...prevState,[event.target.name]: event.target.value}))
+  }
+
   const handleUploadPhoto = async ({ target: { files } }) => {
-    // console.log(files[0])
+    
     const cloudinaryAPI = 'https://api.cloudinary.com/v1_1/dd329k01w/image/upload'
 
     const data = new FormData()
     data.append('file', files[0])
-    data.append('upload_preset', 'kdboww8u')
+    data.append('upload_preset', 'ml_default')
     const {
       data: { secure_url }
     } = await axiosClient.post(cloudinaryAPI, data)
      console.log(secure_url)
-    setNewProduct(prevState => ({ ...prevState, imageUrl: secure_url }))
+    setNewProduct(prevState => ({ ...prevState, pictureUrl: secure_url }))
   }
 
   return (
@@ -51,7 +55,11 @@ export default function CreateProduct() {
      <div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
           <form
             onSubmit={(e) => {
+              handleForm(e)
               handleSubmit(e);
+              
+
+             
             }}
           >
             <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -155,7 +163,7 @@ export default function CreateProduct() {
                               name="file-upload"
                               type="file"
                               class="sr-only"
-                              onChange={(e) => {handleUploadPhoto(e)}}
+                              onChange={(e) => {handleUploadPhoto(e)}} 
                             />
                           </label>
                           <p class="pl-1">or drag and drop</p>
