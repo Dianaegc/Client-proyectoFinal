@@ -60,7 +60,7 @@ export default function SingleProduct() {
 
       <section aria-labelledby="information-heading" class="mt-4">
         <h2 id="information-heading" class="sr-only">Product information</h2>
-
+     
         <div class="flex items-center">
           <p class="text-lg text-gray-900 sm:text-xl">${product.price}</p>
 
@@ -78,8 +78,8 @@ export default function SingleProduct() {
             </div>
           </div>
         </div>
-
         <div class="mt-4 space-y-6">
+        
           <p class="text-base text-gray-500">{product.description}</p>
         </div>
 
@@ -96,7 +96,7 @@ export default function SingleProduct() {
     
     <div class="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
       <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-        <img src={product.pictureUrl} alt="Model wearing light green backpack with black canvas straps and front zipper pouch." class="w-full h-full object-center object-cover"/>
+        <img src={product.pictureUrl} alt="Picture url of the product" class="w-full h-full object-center object-cover"/>
       </div>
     </div>
 
@@ -110,34 +110,21 @@ export default function SingleProduct() {
            
             <fieldset>
               <legend class="block text-sm font-medium text-gray-700">
-                Size
+               Colores disponibles:
               </legend>
               <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
             
-                <label class="relative block border border-gray-300 rounded-lg p-4 cursor-pointer focus:outline-none">
-                  <input type="radio" name="size-choice" value="18L" class="sr-only" aria-labelledby="size-choice-0-label" aria-describedby="size-choice-0-description"/>
-                  <p id="size-choice-0-label" class="text-base font-medium text-gray-900">
-                    18L
-                  </p>
-                  <p id="size-choice-0-description" class="mt-1 text-sm text-gray-500">
-                    Perfect for a reasonable amount of snacks.
-                  </p>
+                <label class="relative block border border-gray-300 rounded p-4 cursor-pointer focus:outline-none">
+                
+                  <p  class="mt-1 text-sm text-gray-500">
                   {product.details}
-                  <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
-                </label>
-
-              
-                <label class="relative block border border-gray-300 rounded-lg p-4 cursor-pointer focus:outline-none">
-                  <input type="radio" name="size-choice" value="20L" class="sr-only" aria-labelledby="size-choice-1-label" aria-describedby="size-choice-1-description"/>
-                  <p id="size-choice-1-label" class="text-base font-medium text-gray-900">
-                    20L
-                  </p>
-                  <p id="size-choice-1-description" class="mt-1 text-sm text-gray-500">
-                    Enough room for a serious amount of snacks.
                   </p>
                  
                   <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
                 </label>
+
+              
+                
               </div>
             </fieldset>
           </div>
@@ -145,7 +132,7 @@ export default function SingleProduct() {
             
              
    
-            <button type="submit" class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Add to bag</button>
+            <button type="submit" class="w-30 bg-blue-900 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-blue-900">Agregar al carrito</button>
           </div>
           <div class="mt-6 text-center">
             <a href="#" class="group inline-flex text-base font-medium">

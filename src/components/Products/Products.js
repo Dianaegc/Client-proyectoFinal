@@ -54,7 +54,7 @@ export default function Products() {
                       <p class="mt-4 text-base font-medium text-gray-900">
                         ${product.price}
                       </p>
-                
+              
                     </div>
                   </div>
                 );
