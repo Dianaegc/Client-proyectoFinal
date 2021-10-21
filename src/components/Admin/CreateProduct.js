@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
 import ProductsContext from "./../../context/Products/ProductsContext";
+import axiosClient from "./../../config/axios";
 
 export default function CreateProduct() {
   const ctx = useContext(ProductsContext);
 
   //traer productos del server
 
-  const { products, addProduct } = ctx;
+  const {  addProduct } = ctx;
 
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -29,6 +30,20 @@ export default function CreateProduct() {
     event.preventDefault();
     addProduct(newProduct);
   };
+
+  const handleUploadPhoto = async ({ target: { files } }) => {
+    // console.log(files[0])
+    const cloudinaryAPI = 'https://api.cloudinary.com/v1_1/dd329k01w/image/upload'
+
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'kdboww8u')
+    const {
+      data: { secure_url }
+    } = await axiosClient.post(cloudinaryAPI, data)
+     console.log(secure_url)
+    setNewProduct(prevState => ({ ...prevState, imageUrl: secure_url }))
+  }
 
   return (
     <>
@@ -140,6 +155,7 @@ export default function CreateProduct() {
                               name="file-upload"
                               type="file"
                               class="sr-only"
+                              onChange={(e) => {handleUploadPhoto(e)}}
                             />
                           </label>
                           <p class="pl-1">or drag and drop</p>

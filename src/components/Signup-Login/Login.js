@@ -1,40 +1,28 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext } from 'react'
+import UsersContext from './../../context/Users/UsersContext'
 
-import UsersContext from "./../../context/Users/UsersContext";
 
 export default function Login() {
-  // GLOBAL
-  const ctxUser = useContext(UsersContext);
-
-  const { loginUser } = ctxUser;
-
-  // LOCAL
-
-  const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [login,setLogin] = useState();
-
-  // FUNCIONES EN LOCAL
-  const handleChange = (event) => {
-    setUserData({
-      ...userData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const submitData =async (event) => {
-    event.preventDefault();
-
-    console.log(userData);
-
-    const login=await loginUser(userData)
-    if(login==='error'){
-      alert("Usuario o contraseña inválidos")
+    //global
+    const ctxUser = useContext(UsersContext)
+    const { loginUser } = ctxUser
+    const [user, setUser] = useState({
+        email: "",
+        password: ""
+    })
+    // local
+    const handleChange = (event) => {
+        setUser({
+            ...user,
+            [event.target.name]: event.target.value
+        })
     }
-  };
+    const submitData = (event) => {
+        event.preventDefault()
+        console.log(user);
+        loginUser(user)
+    }
+  
 
   return (
     <>
@@ -77,6 +65,7 @@ export default function Login() {
                       handleChange(e);
                     }}
                   />
+           
                 </div>
               </div>
 

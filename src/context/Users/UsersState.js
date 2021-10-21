@@ -19,7 +19,7 @@ const UsersState = (props) => {
   const [globalState, dispatch] = useReducer(UsersReducer, initialState);
 
   const registerUser = async (dataForm) => {
-    dataForm.type = "customer";
+    dataForm.type = "cliente";
     try {
       const res = await axiosClient.post("/api/users/create", dataForm);
       console.log("res", res);
