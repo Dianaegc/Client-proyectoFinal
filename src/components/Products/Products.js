@@ -10,7 +10,9 @@ export default function Products() {
   const ctx = useContext(ProductsContext);
   const { products, getAllProducts, getProduct } = ctx;
   
-
+  useEffect(() => {
+    getAllProducts();
+  },[]);
   return(
     <>
       <div class="bg-white">
