@@ -12,7 +12,6 @@ const UsersState = (props) => {
       email: null,
     },
     authStatus: false,
-    
   };
 
   //Manejo de reducers
@@ -40,7 +39,7 @@ const UsersState = (props) => {
   const loginUser = async (dataForm) => {
     try {
       const res = await axiosClient.post("/api/auth/login", dataForm);
-     
+
       const token = res.data.data.token;
 
       dispatch({
@@ -48,8 +47,8 @@ const UsersState = (props) => {
         payload: token,
       });
     } catch (error) {
-      console.log("Error al inicio de sesion: ",error);
-      return 'error'
+      console.log("Error al inicio de sesion: ", error);
+      return "error";
     }
   };
 
@@ -70,7 +69,7 @@ const UsersState = (props) => {
     try {
       const res = await axiosClient.get("/api/auth/verifying-token");
       const currentUser = res.data.data.user;
-      console.log('Current user:',currentUser);
+      console.log("Current user:", currentUser);
       dispatch({
         type: "OBTENER_USUARIO",
         payload: currentUser,
@@ -81,11 +80,11 @@ const UsersState = (props) => {
   };
 
   //Logout
-  const logoutUser=async()=>{
+  const logoutUser = async () => {
     dispatch({
-      type:"CERRAR_SESION"
-    })
-  }
+      type: "CERRAR_SESION",
+    });
+  };
 
   //Retorno -providers
   return (
@@ -96,7 +95,7 @@ const UsersState = (props) => {
         registerUser,
         loginUser,
         tokenVerification,
-        logoutUser
+        logoutUser,
       }}
     >
       {props.children}
